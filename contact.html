@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - Hand2Hand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00e6e6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #4ca1af;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      padding: 14px 40px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 161, 175, 0.4);
+    }
+
+    .contact-info {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .info-item {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #4ca1af;
+    }
+
+    .info-item h3 {
+      color: #2c3e50;
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-item p {
+      color: #666;
+      font-size: 14px;
+      margin-left: 30px;
+    }
+
+    .info-item a {
+      color: #4ca1af;
+      text-decoration: none;
+    }
+
+    .info-item a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-section {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .faq-section h2 {
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background: #e9ecef;
+    }
+
+    .faq-item h3 {
+      color: #2c3e50;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #00e6e6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="student_register.html">Student Register</a>
+  <a href="scribe_register.html">Scribe Register</a>
+  <a href="admin_dashboard.html">Admin Dashboard</a>
+  <a href="student_dashboard.html">Student Dashboard</a>
+  <a href="scribe_dashboard.html">Scribe Dashboard</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you!</p>
+  </header>
+
+  <div class="container">
+    <!-- Contact Form and Info -->
+    <div class="contact-section">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="userType">I am a *</label>
+            <select id="userType" name="userType" required>
+              <option value="">Select...</option>
+              <option value="student">Student</option>
+              <option value="scribe">Scribe</option>
+              <option value="admin">Administrator</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required placeholder="Brief subject">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        
+        <div class="info-item">
+          <h3>📧 Email</h3>
+          <p><a href="mailto:support@hand2hand.edu">support@hand2hand.edu</a></p>
+        </div>
+
+        <div class="info-item">
+          <h3>📞 Phone</h3>
+          <p><a href="tel:+911234567890">+91 123 456 7890</a></p>
+          <p style="margin-top: 5px;">Mon-Fri: 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <div class="info-item">
+          <h3>📍 Address</h3>
+          <p>Hand2Hand Support Center<br>
+          Department of Computer Science<br>
+          [Your College Name]<br>
+          [City, State - PIN Code]</p>
+        </div>
+
+        <div class="info-item">
+          <h3>⏱️ Response Time</h3>
+          <p>We typically respond within 24-48 hours during business days.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>❓ How do I register as a student?</h3>
+        <p>Click on "Student Register" in the navigation menu, fill out the registration form with your details, examination requirements, and submit. Our admin team will review and approve your request.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>❓ What qualifications do I need to become a scribe?</h3>
+        <p>Scribes should have good writing skills, patience, and the ability to accurately transcribe spoken words. Specific subject knowledge may be required depending on the examination. Register through the "Scribe Register" page with your qualifications.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>❓ How are scribes assigned to students?</h3>
+        <p>Our admin team matches students with scribes based on availability, subject requirements, examination schedule, and scribe qualifications to ensure the best support.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>❓ Is the service free?</h3>
+        <p>Yes, Hand2Hand is a volunteer-based platform aimed at promoting inclusive education. Both students and scribes can use the platform without any charges.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>❓ What if I need to cancel or reschedule?</h3>
+        <p>Please contact us as soon as possible through this contact form or email us directly. We'll work with you to make necessary arrangements.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>❓ How do I report an issue?</h3>
+        <p>Use the contact form above or email us at support@hand2hand.edu. Please provide as much detail as possible so we can assist you effectively.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hand2Hand. All rights reserved.</p>
+    <p>
+      <a href="terms.html">Terms & Conditions</a> | 
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="faq.html">FAQ</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const userType = document.getElementById('userType').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // In a real application, you would send this data to a server
+      alert(`Thank you ${name}! Your message has been received.\n\nWe'll respond to ${email} within 24-48 hours.`);
+      
+      // Reset form
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

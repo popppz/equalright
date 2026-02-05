@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hand2Hand - Scribe Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00e6e6;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4ca1af;
+    }
+
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #c3e6cb;
+      display: none;
+    }
+
+    .error-message {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #f5c6cb;
+      display: none;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #00e6e6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="student_register.html">Student Register</a>
+    <a href="scribe_register.html">Scribe Register</a>
+    <a href="admin_dashboard.html">Admin Dashboard</a>
+    <a href="student_dashboard.html">Student Dashboard</a>
+    <a href="scribe_dashboard.html">Scribe Dashboard</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Scribe Registration Form -->
+  <div class="container">
+    <div id="successMessage" class="success-message">
+      ✓ Registration submitted successfully! Admin will review your application.
+    </div>
+    <div id="errorMessage" class="error-message"></div>
+
+    <h2>Scribe Registration</h2>
+    <p>Volunteer to be a helping hand for students</p>
+
+    <form id="scribeForm">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+      <label for="qualification">Qualifications *</label>
+      <input type="text" id="qualification" name="qualification" 
+             placeholder="e.g., B.Sc. Computer Science" required>
+
+      <label for="education">Educational Background</label>
+      <textarea id="education" name="education" 
+                placeholder="Details about your educational background"></textarea>
+
+      <label for="subjects">Subject Expertise *</label>
+      <input type="text" id="subjects" name="subjects" 
+             placeholder="e.g., Computer Science, Mathematics, Physics" required>
+
+      <label for="language">Preferred Language *</label>
+      <select id="language" name="language" required>
+        <option value="">-- Select --</option>
+        <option value="english">English</option>
+        <option value="tamil">Tamil</option>
+        <option value="hindi">Hindi</option>
+        <option value="malayalam">Malayalam</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="otherLanguages">Other Languages Known</label>
+      <input type="text" id="otherLanguages" name="otherLanguages" 
+             placeholder="e.g., Bengali, Telugu">
+
+      <label for="location">Your Location *</label>
+      <input type="text" id="location" name="location" 
+             placeholder="e.g., Bangalore, Karnataka" required>
+
+      <label for="availability">Available Days *</label>
+      <input type="text" id="availability" name="availability" 
+             placeholder="e.g., Weekdays, Weekends, or Specific dates" required>
+
+      <label for="experience">Previous Scribe Experience</label>
+      <textarea id="experience" name="experience" 
+                placeholder="Describe any previous scribe or volunteer experience"></textarea>
+
+      <button type="submit">Register as Scribe</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hand2Hand. All rights reserved.</p>
+    <p>
+      <a href="terms.html">Terms & Conditions</a> | 
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('scribeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const formData = {
+        id: 'SCR' + Date.now(), // Generate unique ID
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        qualification: document.getElementById('qualification').value,
+        education: document.getElementById('education').value,
+        subjects: document.getElementById('subjects').value,
+        language: document.getElementById('language').value,
+        otherLanguages: document.getElementById('otherLanguages').value,
+        location: document.getElementById('location').value,
+        availability: document.getElementById('availability').value,
+        experience: document.getElementById('experience').value,
+        status: 'pending',
+        rating: 0,
+        totalAssignments: 0,
+        registrationDate: new Date().toISOString()
+      };
+      
+      // Validate
+      if (!formData.name || !formData.email || !formData.phone || 
+          !formData.qualification || !formData.subjects || 
+          !formData.language || !formData.location || !formData.availability) {
+        showError('Please fill all required fields');
+        return;
+      }
+      
+      // Get existing scribes from localStorage
+      let scribes = JSON.parse(localStorage.getItem('scribes') || '[]');
+      
+      // Check if email already exists
+      const emailExists = scribes.some(scribe => scribe.email === formData.email);
+      if (emailExists) {
+        showError('This email is already registered!');
+        return;
+      }
+      
+      // Add new scribe
+      scribes.push(formData);
+      
+      // Save to localStorage
+      localStorage.setItem('scribes', JSON.stringify(scribes));
+      
+      // Show success message
+      showSuccess();
+      
+      // Reset form
+      document.getElementById('scribeForm').reset();
+      
+      // Optional: Redirect to dashboard after 2 seconds
+      setTimeout(() => {
+        // window.location.href = 'scribe_dashboard.html';
+      }, 2000);
+    });
+    
+    function showSuccess() {
+      const successMsg = document.getElementById('successMessage');
+      const errorMsg = document.getElementById('errorMessage');
+      
+      errorMsg.style.display = 'none';
+      successMsg.style.display = 'block';
+      
+      // Scroll to top to show message
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Hide after 5 seconds
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 5000);
+    }
+    
+    function showError(message) {
+      const errorMsg = document.getElementById('errorMessage');
+      const successMsg = document.getElementById('successMessage');
+      
+      successMsg.style.display = 'none';
+      errorMsg.textContent = '✗ ' + message;
+      errorMsg.style.display = 'block';
+      
+      // Scroll to top to show message
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Hide after 5 seconds
+      setTimeout(() => {
+        errorMsg.style.display = 'none';
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>

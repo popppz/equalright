@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - Hand2Hand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00e6e6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .faq-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .category-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .category-card h3 {
+      color: #2c3e50;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .category-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .faq-section {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .faq-section h2 {
+      color: #2c3e50;
+      font-size: 28px;
+      margin-bottom: 25px;
+      border-left: 5px solid #4ca1af;
+      padding-left: 15px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #4ca1af;
+    }
+
+    .faq-question {
+      color: #2c3e50;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-answer {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      background: white;
+      color: #667eea;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-box a:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #00e6e6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+      }
+
+      .faq-section {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="student_register.html">Student Register</a>
+  <a href="scribe_register.html">Scribe Register</a>
+  <a href="admin_dashboard.html">Admin Dashboard</a>
+  <a href="student_dashboard.html">Student Dashboard</a>
+  <a href="scribe_dashboard.html">Scribe Dashboard</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</nav>
+  <!-- Header -->
+  <header>
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about Hand2Hand</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- General Questions -->
+    <div class="faq-section">
+      <h2>📌 General Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ What is Hand2Hand?</div>
+        <div class="faq-answer">
+          Hand2Hand is a web-based scribe support system designed to connect students with disabilities to qualified volunteer scribes for examinations. The platform streamlines the process of requesting, assigning, and managing scribe support in an efficient and transparent manner.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Who can use Hand2Hand?</div>
+        <div class="faq-answer">
+          Hand2Hand is available to three types of users: (1) Students with disabilities who require scribe assistance during examinations, (2) Volunteers who want to serve as scribes, and (3) Educational institution administrators who manage and coordinate scribe assignments.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Is Hand2Hand free to use?</div>
+        <div class="faq-answer">
+          Yes, Hand2Hand is completely free for both students and scribes. The platform is built on the principle of volunteer support and inclusive education. There are no charges for registration or using any features of the platform.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How does Hand2Hand ensure quality?</div>
+        <div class="faq-answer">
+          Hand2Hand maintains quality through several mechanisms: verification of scribe qualifications by administrators, a rating and feedback system after each examination, background checks and credential verification, and a transparent system where students can view scribe ratings before assignments.
+        </div>
+      </div>
+    </div>
+
+    <!-- For Students -->
+    <div class="faq-section">
+      <h2>👩‍🎓 For Students</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How do I register as a student?</div>
+        <div class="faq-answer">
+          Click on "Student Register" in the navigation menu. Fill out the registration form with your personal details, disability information, and examination requirements. Upload your disability certificate (PDF, JPG, or PNG format). Submit the form and wait for admin approval. You'll receive a confirmation email once approved.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ What documents do I need to provide?</div>
+        <div class="faq-answer">
+          You need to provide a valid disability certificate issued by a medical professional or relevant authority. The certificate should clearly state your disability type and any specific requirements. Additional documents like student ID or institutional verification may be requested by administrators.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How long does it take to get a scribe assigned?</div>
+        <div class="faq-answer">
+          After your registration is approved, scribe assignment typically takes 2-5 business days depending on availability and your examination schedule. We recommend registering at least 2 weeks before your examination date to ensure adequate time for matching and coordination.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Can I request a specific scribe?</div>
+        <div class="faq-answer">
+          While you cannot directly request a specific scribe, you can specify preferences such as subject expertise, language preference, and availability. Our matching system and administrators consider these preferences when making assignments. If you've worked with a scribe before and had a positive experience, you can mention this in special requirements.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ What if I need to cancel or reschedule?</div>
+        <div class="faq-answer">
+          If you need to cancel or reschedule, contact us immediately through the Contact Us page or email support@hand2hand.edu. Please provide at least 48 hours notice when possible. This allows us to notify the scribe and potentially reassign them or find a replacement for your new date.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Can I use Hand2Hand for multiple examinations?</div>
+        <div class="faq-answer">
+          Yes! Once you're registered, you can request scribe support for as many examinations as you need throughout your academic career. Simply log in to your dashboard and submit new requests for each examination.
+        </div>
+      </div>
+    </div>
+
+    <!-- For Scribes -->
+    <div class="faq-section">
+      <h2>✍️ For Scribes</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ What qualifications do I need to become a scribe?</div>
+        <div class="faq-answer">
+          Scribes should have good writing skills, patience, and the ability to accurately transcribe spoken words. While formal qualifications aren't strictly required, we prefer volunteers with educational backgrounds relevant to the subjects they'll assist with. Most importantly, you must be able to write clearly, follow instructions, and maintain professionalism.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How much time commitment is required?</div>
+        <div class="faq-answer">
+          The time commitment varies based on your availability and the number of assignments you accept. Each examination typically lasts 2-4 hours. You have full control over your availability schedule and can update it anytime. There's no minimum commitment required - volunteer as much or as little as your schedule allows.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Will I be compensated for my services?</div>
+        <div class="faq-answer">
+          Hand2Hand operates on a volunteer basis. While scribes are not monetarily compensated, you gain valuable experience, contribute to inclusive education, and receive recognition through our platform's rating system. Some institutions may offer volunteer certificates or letters of recommendation for your service.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ What are my responsibilities as a scribe?</div>
+        <div class="faq-answer">
+          As a scribe, you must: arrive punctually for assigned examinations, write exactly what the student dictates without interpretation or correction, maintain confidentiality of examination content, remain neutral and not influence student responses, follow all examination rules and institutional policies, and report any issues to administrators promptly.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Can I decline an assignment?</div>
+        <div class="faq-answer">
+          Yes, you can decline assignments if they don't fit your schedule or expertise. However, we encourage you to update your availability calendar proactively to avoid being assigned during times you're unavailable. Repeated last-minute cancellations may affect your standing on the platform.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How do I update my availability?</div>
+        <div class="faq-answer">
+          Log in to your scribe dashboard and navigate to the availability section. You can update your preferred days, time slots, and any blackout dates. We recommend keeping your availability current to ensure you only receive assignments that fit your schedule.
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Questions -->
+    <div class="faq-section">
+      <h2>💻 Technical Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ What browsers are supported?</div>
+        <div class="faq-answer">
+          Hand2Hand works best on modern browsers including Google Chrome (version 90+), Mozilla Firefox (version 88+), Microsoft Edge (version 90+), and Safari (version 14+). We recommend keeping your browser updated to the latest version for optimal performance and security.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Can I access Hand2Hand on my mobile device?</div>
+        <div class="faq-answer">
+          Yes! Hand2Hand is fully responsive and works on smartphones and tablets. You can register, view dashboards, and manage your account from any device with an internet connection and a web browser.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ I forgot my password. How do I reset it?</div>
+        <div class="faq-answer">
+          Click on the "Forgot Password" link on the login page. Enter your registered email address, and you'll receive instructions to reset your password. If you don't receive the email within a few minutes, check your spam folder or contact support.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Is my personal information secure?</div>
+        <div class="faq-answer">
+          Yes, we take data security seriously. All data transmission is encrypted using SSL/TLS protocols. Personal information is stored securely and only accessible to authorized administrators. We never share your data with third parties without your consent. For more details, please read our Privacy Policy.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How do I report a technical issue?</div>
+        <div class="faq-answer">
+          If you encounter any technical problems, please contact us through the Contact Us page. Provide details about the issue including what you were trying to do, any error messages, your browser and device information. Our support team will investigate and respond within 24-48 hours.
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Questions -->
+    <div class="faq-section">
+      <h2>🧑‍💼 For Administrators</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How do I get admin access?</div>
+        <div class="faq-answer">
+          Admin access is granted to authorized personnel from educational institutions. Contact us at support@hand2hand.edu with your institutional details and role to request admin credentials. We'll verify your information and provide access after approval.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How do I verify student and scribe registrations?</div>
+        <div class="faq-answer">
+          Log in to the admin dashboard where you'll see pending registrations. Review submitted documents, qualifications, and information. You can approve or reject registrations with a single click. Rejected users receive notification with reasons, and approved users gain full platform access.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ Can assignments be made manually?</div>
+        <div class="faq-answer">
+          Yes, administrators have the ability to manually assign scribes to students. The platform also offers automated matching suggestions based on criteria like subject expertise, availability, and location. You can choose to use automated suggestions or make manual assignments based on specific requirements.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">❓ How do I handle conflicts or complaints?</div>
+        <div class="faq-answer">
+          The admin dashboard includes a support ticket system for managing complaints. Review the issue details, contact the involved parties, and mediate a resolution. Document all actions taken for record-keeping and future reference. Serious violations can result in account suspension.
+        </div>
+      </div>
+    </div>
+
+    <!-- Still Have Questions? -->
+    <div class="contact-box">
+      <h3>Still Have Questions?</h3>
+      <p>Can't find the answer you're looking for? We're here to help!</p>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hand2Hand. All rights reserved.</p>
+    <p>
+      <a href="terms.html">Terms & Conditions</a> | 
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>
